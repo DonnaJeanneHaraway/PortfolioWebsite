@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mira Seeba — St Paul Public Housing Interview Archive</title>
+<!-- Favicon -->
+<link rel="icon" href="assets/favicon/Favicon2026.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://use.typekit.net/smq6qgj.css">
+<style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        cursor: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        background-color: #9e9ebf;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* ── Header ── */
+    header {
+        width: 100%;
+        padding: 24px 20px 0;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        position: static;
+        background-color: #9e9ebf;
+    }
+
+    .header-img {
+        max-width: 900px;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        -webkit-user-drag: none;
+        display: block;
+    }
+
+    /* ── Nav ── */
+    nav {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 20px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #9e9ebf;
+        width: 100%;
+    }
+
+    nav a {
+        font-family: "aesthet-nova", serif;
+        font-weight: 500;
+        font-style: normal;
+        text-decoration: none;
+        color: #1C0218;
+        font-size: 1.9rem;
+        letter-spacing: 0.2em;
+        text-transform: capitalize;
+        padding: 8px 10px;
+        border: none;
+        background: none;
+        transition: transform 0.2s ease, color 0.15s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+    }
+    nav a:hover { transform: scale(1.1); }
+    nav a.active { color: #78414f; }
+
+    /* ── Content Section ── */
+    .content-section {
+        width: 100%;
+        max-width: 98%;
+        padding: 40px 20px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .page-heading {
+        font-family: "aesthet-nova", serif;
+        font-size: 2rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-align: center;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+        max-width: 800px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .project-description {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        color: #1C0218;
+        text-align: center;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.15);
+        max-width: 700px;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.85;
+    }
+
+    /* ── Video Gallery ── */
+    .video-gallery {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px 20px 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .video-item {
+        position: relative;
+        background: rgba(28, 2, 24, 1);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(201, 96, 122, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: none;
+    }
+
+    .video-item.hovered {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(201, 96, 122, 0.4);
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-wrapper img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.1);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .video-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(120, 65, 79, 0.9);
+        border: 2px solid #DACEDE;
+        border-radius: 50%;
+        cursor: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 10;
+    }
+
+    .play-button:hover {
+        background: rgba(201, 96, 122, 0.9);
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Play Icon - Matching index.html style */
+    .play-icon {
+        width: 24px;
+        height: 24px;
+        background: none;
+        position: relative;
+    }
+    .play-icon::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 20px solid #DACEDE;
+        top: 2px;
+        left: 2px;
+        transform: rotate(90deg);
+        border-radius: 3px;
+    }
+
+    .video-info {
+        padding: 20px;
+    }
+
+    .video-title {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.18em;
+        color: #DACEDE;
+        margin: 0 0 12px 0;
+    }
+
+    .video-description {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        color: rgba(218, 206, 222, 0.8);
+        margin: 0;
+    }
+
+    /* ── Back Button ── */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: rgba(28, 2, 24, 0.08);
+        border: 2px solid rgba(28, 2, 24, 0.15);
+        border-radius: 50px;
+        text-decoration: none;
+        color: #1C0218;
+        font-family: "aesthet-nova", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+        transition: all 0.3s ease;
+        cursor: none;
+    }
+
+    .back-btn:hover {
+        background: rgba(120, 65, 79, 0.15);
+        border-color: rgba(120, 65, 79, 0.3);
+        transform: translateY(-2px);
+    }
+
+    /* ── Footer ── */
+    .social-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0 48px;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .footer-email {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+    }
+    .footer-email:hover {
+        color: #78414f;
+        transform: scale(1.05);
+    }
+
+    .social-icons-row {
+        display: flex;
+        gap: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-link {
+        position: relative;
+        color: #1C0218;
+        display: flex;
+        align-items: center;
+        cursor: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .social-link:hover {
+        color: #78414f;
+        transform: scale(1.15);
+    }
+
+    /* ── Sparkle ── */
+    .sparkle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 1;
+        filter: blur(1px);
+        z-index: 10000;
+        transition: transform 1.8s ease-out, opacity 1.8s ease-out, background-color 0.4s ease;
+    }
+
+    /* ── Back to top ── */
+    .back-to-top {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 40px 0 24px;
+        cursor: none;
+
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+
+        pointer-events: none;
+    }
+
+    .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* ── Arrow button ── */
+    .back-to-top-btn {
+        width: 72px;
+        height: 72px;
+        border: none;
+        cursor: none;
+        padding: 0;
+
+        background-color: #1C0218;
+
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+
+        -webkit-mask-position: center;
+        mask-position: center;
+
+        position: relative;
+    }
+
+    /* DOTS FIXED */
+    .back-to-top-btn::before,
+    .back-to-top-btn::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+
+        width: 60px;
+        height: 60px;
+
+        background-image:
+            radial-gradient(circle, #1C0218 1px, transparent 1px);
+
+        background-size: 6px 6px;
+        opacity: 0.8;
+
+        z-index: -1;
+    }
+
+    /* right dots */
+    .back-to-top-btn::after {
+        right: -28px;
+        top: 8px;
+    }
+
+    /* bottom dots */
+    .back-to-top-btn::before {
+        bottom: -22px;
+        left: 8px;
+    }
+
+    /* Hover */
+    .back-to-top:hover .back-to-top-btn {
+        background-color: #78414f;
+        transform: scale(1.15);
+    }
+
+    /* dots change color */
+    .back-to-top:hover .back-to-top-btn::before,
+    .back-to-top:hover .back-to-top-btn::after {
+        background-image:
+            radial-gradient(circle, #78414f 1px, transparent 1px);
+    }
+
+    /* subtle movement */
+    .back-to-top:hover .back-to-top-btn::after {
+        transform: translateX(6px);
+    }
+    .back-to-top:hover .back-to-top-btn::before {
+        transform: translateY(6px);
+    }
+
+    /* label */
+    .back-to-top-label {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        color: #1C0218;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+        text-transform: lowercase;
+        border: none;
+        background: none;
+        cursor: none;
+        transition: transform 0.4s ease, color 0.s ease;
+    }
+    .back-to-top:hover .back-to-top-label {
+        color: #78414f;
+        transform: scale(1.05);
+    }
+
+    /* ── Video Modal ── */
+    .video-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(28, 2, 24, 0.95);
+        z-index: 9999;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .video-modal.open { display: flex; }
+
+    .video-container {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        background: #1C0218;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 85vw;
+        height: 85vh;
+    }
+
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+    }
+
+    .video-close {
+        position: fixed;
+        top: 24px;
+        right: 32px;
+        width: 48px;
+        height: 48px;
+        cursor: none;
+        background:
+            radial-gradient(circle, #DACEDE 1px, transparent 1px),
+            radial-gradient(circle, #DACEDE 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 0 0, 2.5px 2.5px;
+        border: none;
+        color: transparent;
+        font-size: 0;
+        transition: background 0.2s ease, transform 0.2s ease;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cline x1='10' y1='10' x2='38' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='38' y1='10' x2='10' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cline x1='10' y1='10' x2='38' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='38' y1='10' x2='10' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+    .video-close:hover,
+    .video-close.clicked {
+        background:
+            radial-gradient(circle, #c9607a 1px, transparent 1px),
+            radial-gradient(circle, #c9607a 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 2.5px 2.5px, 5px 5px;
+    }
+    .video-close:hover { transform: scale(1.15); }
+    .video-close.clicked { transform: scale(1.0); }
+
+    .video-arrow {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: none;
+        border: none;
+        padding: 0;
+        width: 90px;
+        height: 90px;
+        user-select: none;
+        opacity: 0.75;
+        background:
+            radial-gradient(circle, #DACEDE 1px, transparent 1px),
+            radial-gradient(circle, #DACEDE 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 0 0, 2.5px 2.5px;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+        -webkit-transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+    }
+    .video-arrow:hover,
+    .video-arrow.clicked {
+        background:
+            radial-gradient(circle, #c9607a 1px, transparent 1px),
+            radial-gradient(circle, #c9607a 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 2.5px 2.5px, 5px 5px;
+        opacity: 1;
+    }
+    .video-arrow:hover { transform: translateY(-50%) scale(1.15); }
+    .video-arrow.clicked { transform: translateY(-50%) scale(1.0); }
+    .video-arrow.prev {
+        left: 20px;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='30,10 18,24 30,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='30,10 18,24 30,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .video-arrow.next {
+        right: 20px;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='18,10 30,24 18,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='18,10 30,24 18,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .video-counter {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        color: #DACEDE;
+        letter-spacing: 0.15em;
+        opacity: 0.7;
+    }
+
+    /* ── Sparkle ── */
+    .sparkle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 1;
+        filter: blur(1px);
+        z-index: 10000;
+        transition: transform 1.8s ease-out, opacity 1.8s ease-out, background-color 0.4s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Cursor head - bright pink dot */
+    .cursor-head {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff69b4;
+        pointer-events: none;
+        z-index: 10001;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #ff69b4, 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        nav { gap: 24px; }
+        nav a { font-size: 1.3rem; }
+    }
+
+    /* Touch device optimization */
+    @media (hover: none) and (pointer: coarse) {
+        body { cursor: auto; }
+        .custom-cursor { display: none; }
+        .cursor-head { display: none; }
+        .video-arrow, .video-close, .play-button, .back-to-top-btn, .back-to-top-label, .social-link, .footer-email { cursor: pointer; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="assets/Title_Logo_Site.webp" alt="Mira Seeba" class="header-img">
+</header>
+
+<nav>
+    <a href="index.html">Animation</a>
+    <a href="illustration.html">Illustration</a>
+    <a href="commercial.html">Commercial</a>
+    <a href="painting.html">Painting</a>
+    <a href="about.html">About</a>
+</nav>
+
+<main class="content-section">
+    
+    <div class="video-gallery">
+        <div class="video-item" data-index="0">
+            <div class="play-button" data-index="0">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/ykGO6zWCRv4/maxresdefault.jpg" alt="Executive Director Jon Gutzmann">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Executive Director Jon Gutzmann</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="1">
+            <div class="play-button" data-index="1">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/Llu-8JcS3WY/maxresdefault.jpg" alt="Commissioner Kevin Lindsey">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Commissioner Kevin Lindsey</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="2">
+            <div class="play-button" data-index="2">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/m9afU_bPgD4/maxresdefault.jpg" alt="Dr. MayKao Hang">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Dr. MayKao Hang</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="3">
+            <div class="play-button" data-index="3">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/VGLrv5WUi04/maxresdefault.jpg" alt="Marshall Anderson">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Marshall Anderson</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="4">
+            <div class="play-button" data-index="4">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/jBd2x1lZgMY/maxresdefault.jpg" alt="Shawn Huckleby">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Shawn Huckleby</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="5">
+            <div class="play-button" data-index="5">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/dPg3X7AvDZU/maxresdefault.jpg" alt="Gy Chajili">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Gy Chajili</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="6">
+            <div class="play-button" data-index="6">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/gchV4gb8U4Y/maxresdefault.jpg" alt="Gene Gelgelu">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Gene Gelgelu</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="7">
+            <div class="play-button" data-index="7">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/tFdKWHW2n1s/maxresdefault.jpg" alt="Resident Services Director Kim Nguyen">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Resident Services Director Kim Nguyen</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="8">
+            <div class="play-button" data-index="8">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/ZFkLW881V0s/maxresdefault.jpg" alt="Councilmember Jane Prince">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Councilmember Jane Prince</h3>
+            </div>
+        </div>
+        <div class="video-item" data-index="9">
+            <div class="play-button" data-index="9">
+                <div class="play-icon"></div>
+            </div>
+            <div class="video-wrapper">
+                <img src="https://i.ytimg.com/vi/UKajuRS88-o/maxresdefault.jpg" alt="Board Chair Missy Staples Thompson">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Board Chair Missy Staples Thompson</h3>
+            </div>
+        </div>
+    </div>
+    
+    <a href="st-paul-housing.html" class="back-btn">← Back to Featured Interviews</a>
+</main>
+
+<!-- Video Modal -->
+<div class="video-modal" id="video-modal">
+    <button class="video-arrow prev" id="video-prev" aria-label="Previous video"></button>
+    <button class="video-arrow next" id="video-next" aria-label="Next video"></button>
+    <div class="video-container">
+        <video id="modal-video" controls style="display: block; width: 100%; height: 100%;">
+            Your browser does not support the video tag.
+        </video>
+        <div id="youtube-iframe-container" style="display: none; width: 100%; height: 100%; position: relative;">
+            <iframe
+                src=""
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+                style="width: 100%; height: 100%; border: none;"
+                id="youtube-iframe">
+            </iframe>
+        </div>
+        <button class="video-close" id="video-close" aria-label="Close video"></button>
+    </div>
+    <div class="video-counter" id="video-counter">1 / 10</div>
+</div>
+
+<!-- Social footer -->
+<footer class="social-footer">
+    <a href="mailto:miraseeba@gmail.com" class="footer-email">miraseeba@gmail.com</a>
+    <div class="social-icons-row">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/mira.seeba/" target="_blank" aria-label="Instagram" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-ig" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-ig" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-ig">
+                        <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#fade-ig)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#dots-ig)" mask="url(#mask-ig)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@mira_seeba/videos" target="_blank" aria-label="YouTube" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-yt" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-yt" cx="15%" cy="0%" r="100%" fx="15%" fy="0%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="white" stop-opacity="0.2"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-yt">
+                        <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#fade-yt)"/>
+                    </mask>
+                </defs>
+                <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#dots-yt)" mask="url(#mask-yt)" stroke="none"/>
+                <rect x="2" y="5" width="20" height="14" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/mira-seeba-025899257" target="_blank" aria-label="LinkedIn" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-li" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-li" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-li">
+                        <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#fade-li)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#dots-li)" mask="url(#mask-li)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="8" x2="8" y2="8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16v-5M16 16v-3a2 2 0 0 0-4 0" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<div class="back-to-top" id="back-to-top">
+    <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top"></button>
+    <button class="back-to-top-label" id="back-to-top-label">back to top</button>
+</div>
+
+</body>
+</html>
+
+<script>
+    // Back to top functionality
+    const backToTop = document.getElementById('back-to-top');
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 200);
+    });
+    document.getElementById('back-to-top-btn').addEventListener('click', scrollToTop);
+    document.getElementById('back-to-top-label').addEventListener('click', scrollToTop);
+
+    // Fade in once fonts and page are ready
+    document.fonts.ready.then(() => {
+        document.body.style.opacity = '1';
+    });
+
+    // Sparkle trail
+    const cursorHead = document.createElement('div');
+    cursorHead.className = 'cursor-head';
+    document.body.appendChild(cursorHead);
+
+    document.addEventListener('mousemove', function(e) {
+        // Move cursor head
+        cursorHead.style.left = e.clientX + 'px';
+        cursorHead.style.top = e.clientY + 'px';
+
+        // Create sparkle
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        const isAltMode = videoModal.classList.contains('open');
+        sparkle.style.backgroundColor = isAltMode ? '#c9607a' : '#1C0218';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
+        document.body.appendChild(sparkle);
+        requestAnimationFrame(() => {
+            sparkle.style.transform = 'translateY(-50px) translate(-50%, -50%) scale(0.3)';
+            sparkle.style.opacity = '0';
+        });
+        setTimeout(() => { sparkle.style.backgroundColor = isAltMode ? '#1C0218' : '#c9607a'; }, 300);
+        setTimeout(() => { sparkle.remove(); }, 1800);
+    });
+
+    // Video item hover effects
+    document.querySelectorAll('.video-item').forEach(item => {
+        item.addEventListener('mouseenter', (e) => {
+            // Check if the element is actually visible and not obscured
+            const rect = item.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const headerHeight = document.querySelector('header').offsetHeight + document.querySelector('nav').offsetHeight;
+
+            // Only apply hover if the element is below the header
+            if (rect.top + scrollTop > headerHeight) {
+                item.classList.add('hovered');
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('hovered');
+        });
+    });
+
+    // Video data array for all 10 videos
+    const videos = [
+        {
+            title: "Executive Director Jon Gutzmann",
+            video: "https://www.youtube.com/watch?v=ykGO6zWCRv4",
+            thumbnail: "https://i.ytimg.com/vi/ykGO6zWCRv4/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Commissioner Kevin Lindsey",
+            video: "https://www.youtube.com/watch?v=Llu-8JcS3WY",
+            thumbnail: "https://i.ytimg.com/vi/Llu-8JcS3WY/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Dr. MayKao Hang",
+            video: "https://www.youtube.com/watch?v=m9afU_bPgD4",
+            thumbnail: "https://i.ytimg.com/vi/m9afU_bPgD4/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Marshall Anderson",
+            video: "https://www.youtube.com/watch?v=VGLrv5WUi04",
+            thumbnail: "https://i.ytimg.com/vi/VGLrv5WUi04/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Shawn Huckleby",
+            video: "https://www.youtube.com/watch?v=jBd2x1lZgMY",
+            thumbnail: "https://i.ytimg.com/vi/jBd2x1lZgMY/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Gy Chajili",
+            video: "https://www.youtube.com/watch?v=dPg3X7AvDZU",
+            thumbnail: "https://i.ytimg.com/vi/dPg3X7AvDZU/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Gene Gelgelu",
+            video: "https://www.youtube.com/watch?v=gchV4gb8U4Y",
+            thumbnail: "https://i.ytimg.com/vi/gchV4gb8U4Y/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Resident Services Director Kim Nguyen",
+            video: "https://www.youtube.com/watch?v=tFdKWHW2n1s",
+            thumbnail: "https://i.ytimg.com/vi/tFdKWHW2n1s/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Councilmember Jane Prince",
+            video: "https://www.youtube.com/watch?v=ZFkLW881V0s",
+            thumbnail: "https://i.ytimg.com/vi/ZFkLW881V0s/maxresdefault.jpg",
+            isYouTube: true
+        },
+        {
+            title: "Board Chair Missy Staples Thompson",
+            video: "https://www.youtube.com/watch?v=UKajuRS88-o",
+            thumbnail: "https://i.ytimg.com/vi/UKajuRS88-o/maxresdefault.jpg",
+            isYouTube: true
+        }
+    ];
+
+    // Video modal functions
+    const videoModal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const youtubeContainer = document.getElementById('youtube-iframe-container');
+    const videoCounter = document.getElementById('video-counter');
+    let currentVideoIndex = 0;
+
+    function openVideoModal(index) {
+        currentVideoIndex = index;
+        const video = videos[index];
+        loadVideo(video);
+        updateVideoCounter();
+        videoModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function loadVideo(video) {
+        if (video.isYouTube) {
+            const isLocalFile = window.location.protocol === 'file:';
+            
+            if (isLocalFile) {
+                window.open(video.video, '_blank');
+                return;
+            }
+            
+            modalVideo.style.display = 'none';
+            youtubeContainer.style.display = 'block';
+            
+            const videoId = video.video.includes('youtu.be/') 
+                ? video.video.split('youtu.be/')[1].split('?')[0]
+                : video.video.split('v=')[1]?.split('&')[0];
+            
+            youtubeContainer.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        } else {
+            modalVideo.style.display = 'block';
+            youtubeContainer.style.display = 'none';
+            youtubeContainer.innerHTML = '';
+            modalVideo.src = video.video;
+            modalVideo.poster = video.thumbnail;
+        }
+    }
+
+    function updateVideoCounter() {
+        videoCounter.textContent = `${currentVideoIndex + 1} / ${videos.length}`;
+    }
+
+    function navigateVideo(direction) {
+        if (direction === 'next') {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        } else {
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+        }
+        
+        const video = videos[currentVideoIndex];
+        loadVideo(video);
+        updateVideoCounter();
+    }
+
+    function closeVideoModal() {
+        modalVideo.pause();
+        videoModal.classList.remove('open');
+        document.body.style.overflow = '';
+        
+        if (youtubeContainer.style.display !== 'none') {
+            youtubeContainer.innerHTML = '';
+        }
+    }
+
+    // Add click handlers for play buttons
+    document.querySelectorAll('.play-button[data-index]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openVideoModal(parseInt(button.dataset.index));
+        });
+    });
+
+    // Video modal event listeners
+    if (document.getElementById('video-close')) {
+        document.getElementById('video-close').addEventListener('click', closeVideoModal);
+    }
+    if (document.getElementById('video-prev')) {
+        document.getElementById('video-prev').addEventListener('click', () => navigateVideo('prev'));
+    }
+    if (document.getElementById('video-next')) {
+        document.getElementById('video-next').addEventListener('click', () => navigateVideo('next'));
+    }
+    if (videoModal) {
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const isVideoOpen = videoModal && videoModal.classList.contains('open');
+
+        if (e.key === 'Escape' && isVideoOpen) {
+            closeVideoModal();
+        }
+        if (!isVideoOpen) return;
+
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            navigateVideo('prev');
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            navigateVideo('next');
+        }
+    });
+
+    // Sparkle trail
+    document.addEventListener('mousemove', function(e) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        const isAltMode = videoModal.classList.contains('open');
+        sparkle.style.backgroundColor = isAltMode ? '#c9607a' : '#1C0218';
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        document.body.appendChild(sparkle);
+        requestAnimationFrame(() => {
+            sparkle.style.transform = 'translateY(-50px) scale(0.3)';
+            sparkle.style.opacity = '0';
+        });
+        setTimeout(() => { sparkle.style.backgroundColor = isAltMode ? '#1C0218' : '#c9607a'; }, 300);
+        setTimeout(() => { sparkle.remove(); }, 1800);
+    });
+</script>

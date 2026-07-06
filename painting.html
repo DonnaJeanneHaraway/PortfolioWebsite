@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mira Seeba — Painting Portfolio</title>
+<meta name="description" content="Mira Seeba's painting portfolio. Featuring original paintings including 'Irkutsk' selected for the Minnesota State Fair Fine Arts Exhibition. Prices available upon request.">
+<meta name="keywords" content="painting, fine art, original artwork, Minnesota State Fair, Irkutsk, artist, Mira Seeba">
+<meta name="author" content="Mira Seeba">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mira Seeba — Painting Portfolio">
+<meta property="og:description" content="Explore Mira Seeba's painting portfolio. Featuring original paintings including 'Irkutsk' selected for the Minnesota State Fair Fine Arts Exhibition.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miraseeba.com/painting.html">
+<meta property="og:image" content="https://miraseeba.com/assets/Title_Logo_Site.webp">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mira Seeba — Painting Portfolio">
+<meta name="twitter:description" content="Explore Mira Seeba's painting portfolio. Featuring original paintings including 'Irkutsk' selected for the Minnesota State Fair Fine Arts Exhibition.">
+<meta name="twitter:image" content="https://miraseeba.com/assets/Title_Logo_Site.webp">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://miraseeba.com/painting.html">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#9e9ebf">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<!-- Favicon -->
+<link rel="icon" href="assets/favicon/Favicon2026.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="https://use.typekit.net/smq6qgj.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mira Seeba Painting Portfolio",
+  "description": "Original paintings by Mira Seeba, including 'Irkutsk' selected for the Minnesota State Fair Fine Arts Exhibition.",
+  "url": "https://miraseeba.com/painting.html",
+  "author": {
+    "@type": "Person",
+    "name": "Mira Seeba",
+    "url": "https://miraseeba.com"
+  },
+  "about": ["Painting", "Fine Art", "Original Artwork"]
+}
+</script>
+<style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        cursor: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        background-color: #9e9ebf;
+    }
+
+    /* ── Header ── */
+    header {
+        width: 100%;
+        padding: 24px 20px 0;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        position: static;
+        background-color: #9e9ebf;
+    }
+
+    .header-img {
+        max-width: 900px;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        -webkit-user-drag: none;
+        display: block;
+    }
+
+    /* ── Nav ── */
+    nav {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 20px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #9e9ebf;
+        width: 100%;
+    }
+
+    nav a {
+        font-family: "aesthet-nova", serif;
+        font-weight: 500;
+        font-style: normal;
+        text-decoration: none;
+        color: #1C0218;
+        font-size: 1.9rem;
+        letter-spacing: 0.2em;
+        text-transform: capitalize;
+        padding: 8px 10px;
+        border: none;
+        background: none;
+        transition: transform 0.2s ease, color 0.15s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+    }
+    nav a:hover { transform: scale(1.1); }
+    nav a.active { color: #78414f; }
+
+
+    /* ── Process section ── */
+    .process-section {
+        width: 100%;
+        max-width: 98%;
+        padding: 32px 0 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .process-heading {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-align: center;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+        max-width: 700px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .process-images {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .process-images .gallery-item {
+        flex: 1;
+        max-width: 32%;
+    }
+
+    /* ── Gallery ── */
+    .gallery {
+        width: 100%;
+        max-width: 98%;
+        padding: 20px 20px 20px;
+        columns: 3;
+        column-gap: 20px;
+    }
+
+    .gallery-item {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 20px;
+        break-inside: avoid;
+        border-radius: 4px;
+        overflow: visible;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        display: block;
+        border-radius: 4px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+        cursor: none;
+        box-shadow: 0 4px 14px rgba(201, 96, 122, 0.2);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.02);
+        box-shadow: 0 0 8px 2px rgba(201, 96, 122, 0.4);
+        filter: brightness(0.82) drop-shadow(0 0 4px rgba(201, 96, 122, 0.35));
+    }
+
+    /* ── Hover overlay ── */
+    .item-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 18px 14px;
+        gap: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        border-radius: 4px;
+    }
+    .gallery-item:hover .item-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* ── Tall gallery item for specific image ── */
+    .gallery-item-tall {
+        break-inside: avoid;
+        margin-bottom: 20px;
+        align-self: flex-start; /* Align to top */
+    }
+
+    .gallery-item-tall img {
+        width: 100%;
+        height: 300px; /* Limit height to prevent jutting out */
+        object-fit: contain; /* Show full image without cropping */
+        object-position: top; /* Start from top of image */
+        border-radius: 4px;
+        transition: box-shadow 0.35s ease;
+        cursor: none;
+        box-shadow: 0 4px 14px rgba(201, 96, 122, 0.2);
+    }
+
+    .overlay-price {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.18em;
+        color: #DACEDE;
+        text-shadow: 0 1px 6px rgba(28, 2, 24, 0.6);
+    }
+
+    .overlay-price.sold-high {
+        position: absolute;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .overlay-price.sold-higher {
+        position: absolute;
+        bottom: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .overlay-btn {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: lowercase;
+        border: none;
+        border-radius: 50px;
+        outline: 3px dotted rgba(218, 206, 222, 0.7);
+        outline-offset: -3px;
+        background: rgba(28, 2, 24, 0.45);
+        color: #DACEDE;
+        padding: 6px 18px;
+        cursor: none;
+        transition: background 0.2s ease, outline-color 0.2s ease, transform 0.15s ease;
+        backdrop-filter: blur(4px);
+        white-space: nowrap;
+        -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 100%);
+        mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 100%);
+    }
+    .overlay-btn:hover {
+        background: rgba(120, 65, 79, 0.75);
+        outline-color: #c9607a;
+        transform: scale(1.05);
+    }
+    .overlay-btn:active { transform: scale(0.98); }
+
+    /* ── Cart Drawer ── */
+    .cart-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 380px;
+        max-width: 100vw;
+        height: 100vh;
+        background: #1C0218;
+        z-index: 9000;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid rgba(201, 96, 122, 0.2);
+    }
+    .cart-drawer.open { transform: translateX(0); }
+
+    .cart-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(28, 2, 24, 0.5);
+        z-index: 8999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+    .cart-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 28px 20px;
+        border-bottom: 1px solid rgba(201, 96, 122, 0.15);
+    }
+
+    .cart-title {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.2em;
+        color: #DACEDE;
+        text-transform: lowercase;
+    }
+
+    .cart-close {
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: none;
+        cursor: none;
+        padding: 0;
+        color: #DACEDE;
+        opacity: 0.6;
+        transition: opacity 0.2s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cart-close:hover { opacity: 1; transform: scale(1.15); }
+    .cart-close svg { width: 20px; height: 20px; }
+
+    .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cart-empty {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+        color: rgba(218, 206, 222, 0.4);
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .cart-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(201, 96, 122, 0.1);
+    }
+
+    .cart-item-thumb {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 3px;
+        flex-shrink: 0;
+        border: 1px solid rgba(201, 96, 122, 0.2);
+    }
+
+    .cart-item-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .cart-item-name {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        color: #DACEDE;
+        text-transform: lowercase;
+    }
+
+    .cart-item-variant {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.5);
+    }
+
+    .cart-item-price {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        color: #c9607a;
+        margin-top: 4px;
+    }
+
+    .cart-item-remove {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.35);
+        background: none;
+        border: none;
+        cursor: none;
+        padding: 0;
+        transition: color 0.2s;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .cart-item-remove:hover { color: #c9607a; }
+
+    .cart-footer {
+        padding: 20px 28px 32px;
+        border-top: 1px solid rgba(201, 96, 122, 0.15);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .cart-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .cart-total-label {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        color: rgba(218, 206, 222, 0.6);
+        text-transform: lowercase;
+    }
+
+    .cart-total-amount {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        color: #DACEDE;
+    }
+
+    .checkout-btn {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.22em;
+        text-transform: lowercase;
+        background: #78414f;
+        color: #DACEDE;
+        border: none;
+        padding: 14px 20px;
+        border-radius: 2px;
+        cursor: none;
+        transition: background 0.2s ease, transform 0.15s ease;
+        width: 100%;
+    }
+    .checkout-btn:hover { background: #c9607a; transform: scale(1.01); }
+    .checkout-btn:disabled { opacity: 0.35; transform: none; }
+
+    /* ── Checkout Modal ── */
+    .checkout-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(28, 2, 24, 0.93);
+        z-index: 9999;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .checkout-modal.open { display: flex; }
+
+    .checkout-box {
+        background: #1C0218;
+        border: 1px solid rgba(201, 96, 122, 0.25);
+        border-radius: 4px;
+        width: 100%;
+        max-width: 500px;
+        max-height: 92vh;
+        overflow-y: auto;
+        padding: 36px 36px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: relative;
+    }
+
+    .checkout-heading {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.22em;
+        color: #DACEDE;
+        text-transform: lowercase;
+        text-align: center;
+    }
+
+    .checkout-subheading {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: rgba(218, 206, 222, 0.45);
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: -16px;
+    }
+
+    .checkout-close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: none;
+        cursor: none;
+        color: rgba(218, 206, 222, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.2s, transform 0.2s;
+    }
+    .checkout-close:hover { color: #DACEDE; transform: scale(1.15); }
+    .checkout-close svg { width: 18px; height: 18px; }
+
+    .payment-tabs {
+        display: flex;
+        border: 1px solid rgba(201, 96, 122, 0.2);
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .payment-tab {
+        flex: 1;
+        font-family: "aesthet-nova", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: lowercase;
+        background: none;
+        border: none;
+        color: rgba(218, 206, 222, 0.45);
+        padding: 12px;
+        cursor: none;
+        transition: background 0.2s, color 0.2s;
+    }
+    .payment-tab.active {
+        background: rgba(201, 96, 122, 0.15);
+        color: #DACEDE;
+    }
+    .payment-tab:not(.active):hover {
+        background: rgba(201, 96, 122, 0.07);
+        color: rgba(218, 206, 222, 0.7);
+    }
+
+    .payment-panel { display: none; flex-direction: column; gap: 14px; }
+    .payment-panel.active { display: flex; }
+
+    .field-group { display: flex; flex-direction: column; gap: 6px; }
+    .field-row { display: flex; gap: 12px; }
+    .field-row .field-group { flex: 1; }
+
+    .field-label {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        color: rgba(218, 206, 222, 0.5);
+        text-transform: lowercase;
+    }
+
+    .field-input {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        background: rgba(218, 206, 222, 0.05);
+        border: 1px solid rgba(201, 96, 122, 0.2);
+        border-radius: 2px;
+        color: #DACEDE;
+        padding: 10px 12px;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    .field-input:focus { border-color: rgba(201, 96, 122, 0.55); }
+    .field-input::placeholder { color: rgba(218, 206, 222, 0.2); }
+
+    .stripe-placeholder {
+        background: rgba(218, 206, 222, 0.04);
+        border: 1px solid rgba(201, 96, 122, 0.2);
+        border-radius: 2px;
+        padding: 14px 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .stripe-placeholder-text {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.35);
+    }
+
+    .stripe-badge {
+        margin-left: auto;
+        font-family: "aesthet-nova", serif;
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+        color: rgba(218, 206, 222, 0.2);
+        border: 1px solid rgba(218, 206, 222, 0.15);
+        padding: 3px 7px;
+        border-radius: 2px;
+    }
+
+    .venmo-info { display: flex; flex-direction: column; gap: 16px; }
+
+    .venmo-steps { display: flex; flex-direction: column; gap: 10px; }
+
+    .venmo-step { display: flex; gap: 12px; align-items: flex-start; }
+
+    .venmo-step-num {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        color: #78414f;
+        width: 20px;
+        flex-shrink: 0;
+        padding-top: 1px;
+    }
+
+    .venmo-step-text {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.55);
+        line-height: 1.6;
+    }
+
+    .venmo-note {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.3);
+        text-align: center;
+        font-style: italic;
+    }
+
+    .checkout-order-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        background: rgba(218, 206, 222, 0.03);
+        border-radius: 2px;
+        border: 1px solid rgba(201, 96, 122, 0.1);
+    }
+
+    .checkout-order-row { display: flex; justify-content: space-between; }
+
+    .checkout-order-key {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        color: rgba(218, 206, 222, 0.4);
+    }
+
+    .checkout-order-val {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        color: rgba(218, 206, 222, 0.7);
+    }
+
+    .checkout-order-total-row {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(201, 96, 122, 0.15);
+        padding-top: 8px;
+        margin-top: 4px;
+    }
+
+    .checkout-order-total-key {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.15em;
+        color: #DACEDE;
+    }
+
+    .checkout-order-total-val {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        color: #c9607a;
+    }
+
+    .place-order-btn {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.22em;
+        text-transform: lowercase;
+        background: #78414f;
+        color: #DACEDE;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 2px;
+        cursor: none;
+        transition: background 0.2s ease, transform 0.15s ease;
+        width: 100%;
+    }
+    .place-order-btn:hover { background: #c9607a; transform: scale(1.01); }
+
+    .confirmation {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .confirmation.active { display: flex; }
+
+    .confirmation-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 96, 122, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c9607a;
+    }
+    .confirmation-icon svg { width: 26px; height: 26px; }
+
+    .confirmation-heading {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.2em;
+        color: #DACEDE;
+    }
+
+    .confirmation-text {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.13em;
+        color: rgba(218, 206, 222, 0.5);
+        line-height: 1.7;
+        max-width: 320px;
+    }
+
+    .confirmation-venmo {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        color: #c9607a;
+        padding: 14px 24px;
+        border: 1px solid rgba(201, 96, 122, 0.3);
+        border-radius: 2px;
+    }
+
+    .continue-btn {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: lowercase;
+        background: none;
+        border: 1px solid rgba(218, 206, 222, 0.2);
+        color: rgba(218, 206, 222, 0.5);
+        padding: 10px 24px;
+        border-radius: 2px;
+        cursor: none;
+        transition: border-color 0.2s, color 0.2s;
+    }
+    .continue-btn:hover { border-color: rgba(218, 206, 222, 0.5); color: #DACEDE; }
+
+  /* ── Back to top ── */
+.back-to-top {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 40px 0 24px;
+    cursor: none;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    pointer-events: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ── Arrow button ── */
+.back-to-top-btn {
+    width: 72px;
+    height: 72px;
+    border: none;
+    cursor: none;
+    padding: 0;
+
+    background-color: #1C0218;
+
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+
+-webkit-mask-size: contain;
+mask-size: contain;
+
+-webkit-mask-position: center;
+mask-position: center;
+
+    position: relative;
+}
+
+/* ── DOTS FIXED ── */
+.back-to-top-btn::before,
+.back-to-top-btn::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+
+    width: 60px;
+    height: 60px;
+
+    background-image:
+        radial-gradient(circle, #1C0218 1px, transparent 1px);
+
+    background-size: 6px 6px;
+    opacity: 0.8;
+
+    z-index: -1;
+}
+
+/* right dots */
+.back-to-top-btn::after {
+    right: -28px;
+    top: 8px;
+}
+
+/* bottom dots */
+.back-to-top-btn::before {
+    bottom: -22px;
+    left: 8px;
+}
+
+/* ── Hover ── */
+.back-to-top:hover .back-to-top-btn {
+    background-color: #78414f;
+    transform: scale(1.15);
+}
+
+/* dots change color */
+.back-to-top:hover .back-to-top-btn::before,
+.back-to-top:hover .back-to-top-btn::after {
+    background-image:
+        radial-gradient(circle, #78414f 1px, transparent 1px);
+}
+
+/* subtle movement */
+.back-to-top:hover .back-to-top-btn::after {
+    transform: translateX(6px);
+}
+.back-to-top:hover .back-to-top-btn::before {
+    transform: translateY(6px);
+}
+
+/* label */
+.back-to-top-label {
+    font-family: "aesthet-nova", serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: #1C0218;
+    text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+    text-transform: lowercase;
+    border: none;
+    background: none;
+    cursor: none;
+    transition: transform 0.4s ease, color 0.s ease;
+}
+
+.back-to-top:hover .back-to-top-label {
+    color: #78414f;
+    transform: scale(1.05);
+}
+    .social-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0 48px;
+        width: 100%;
+    }
+
+    .footer-email {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+    }
+    .footer-email:hover {
+        color: #78414f;
+        transform: scale(1.05);
+    }
+
+    .social-icons-row {
+        display: flex;
+        gap: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-link {
+        position: relative;
+        color: #1C0218;
+        display: flex;
+        align-items: center;
+        cursor: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .social-link:hover {
+        color: #78414f;
+        transform: scale(1.15);
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(28, 2, 24, 0.92);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 4px;
+        object-fit: contain;
+        user-select: none;
+    }
+
+    .lightbox-close {
+        position: fixed;
+        top: 24px;
+        right: 32px;
+        width: 48px;
+        height: 48px;
+        cursor: none;
+        background:
+            radial-gradient(circle, #DACEDE 1px, transparent 1px),
+            radial-gradient(circle, #DACEDE 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 0 0, 2.5px 2.5px;
+        border: none;
+        color: transparent;
+        font-size: 0;
+        transition: background 0.2s ease, transform 0.2s ease;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cline x1='10' y1='10' x2='38' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='38' y1='10' x2='10' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cline x1='10' y1='10' x2='38' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='38' y1='10' x2='10' y2='38' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+    .lightbox-close:hover,
+    .lightbox-close.clicked {
+        background:
+            radial-gradient(circle, #c9607a 1px, transparent 1px),
+            radial-gradient(circle, #c9607a 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 2.5px 2.5px, 5px 5px;
+    }
+    .lightbox-close:hover { transform: scale(1.15); }
+    .lightbox-close.clicked { transform: scale(1.0); }
+
+    .lightbox-arrow {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: none;
+        border: none;
+        padding: 0;
+        width: 90px;
+        height: 90px;
+        user-select: none;
+        opacity: 0.75;
+        background:
+            radial-gradient(circle, #DACEDE 1px, transparent 1px),
+            radial-gradient(circle, #DACEDE 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 0 0, 2.5px 2.5px;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+    }
+    .lightbox-arrow:hover,
+    .lightbox-arrow.clicked {
+        background:
+            radial-gradient(circle, #c9607a 1px, transparent 1px),
+            radial-gradient(circle, #c9607a 1px, transparent 1px);
+        background-size: 5px 5px, 5px 5px;
+        background-position: 2.5px 2.5px, 5px 5px;
+        opacity: 1;
+    }
+    .lightbox-arrow:hover { transform: translateY(-50%) scale(1.15); }
+    .lightbox-arrow.clicked { transform: translateY(-50%) scale(1.0); }
+    .lightbox-arrow.prev {
+        left: 20px;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='30,10 18,24 30,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='30,10 18,24 30,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .lightbox-arrow.next {
+        right: 20px;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='18,10 30,24 18,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='18,10 30,24 18,38' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .lightbox-counter {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        color: #DACEDE;
+        letter-spacing: 0.15em;
+        opacity: 0.7;
+    }
+
+    /* ── Sparkles ── */
+    .sparkle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 1;
+        filter: blur(1px);
+        z-index: 10000;
+        transition: transform 1.8s ease-out, opacity 1.8s ease-out, background-color 0.4s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Cursor head - bright pink dot */
+    .cursor-head {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff69b4;
+        pointer-events: none;
+        z-index: 10001;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #ff69b4, 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    /* ── Toast ── */
+    .toast {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: #1C0218;
+        border: 1px solid rgba(201, 96, 122, 0.3);
+        color: #DACEDE;
+        font-family: "aesthet-nova", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        padding: 12px 24px;
+        border-radius: 2px;
+        z-index: 9998;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+    .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .gallery { columns: 2; }
+        .cart-drawer { width: 100vw; }
+        nav { gap: 24px; }
+        nav a { font-size: 1.3rem; }
+    }
+
+    /* Touch device optimization */
+    @media (hover: none) and (pointer: coarse), (max-width: 768px) {
+        body { cursor: auto !important; }
+        .custom-cursor { display: none !important; }
+        .cursor-head { display: none !important; }
+        .sparkle { display: none !important; }
+        .cart-nav-btn, .tab-btn, .back-to-top-btn, .back-to-top-label,
+        .social-link, .footer-email, .overlay-btn { cursor: pointer; }
+        .lightbox-close, .lightbox-arrow { display: none !important; }
+    }
+
+</style>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/Title_Logo_Site.webp" alt="Mira Seeba" class="header-img" loading="eager" fetchpriority="high">
+    </header>
+
+    <nav>
+        <a href="index.html" class="tab-btn">Animation</a>
+        <a href="illustration.html" class="tab-btn">Illustration</a>
+        <a href="commercial.html" class="tab-btn">Commercial</a>
+        <a href="painting.html" class="tab-btn active">Painting</a>
+        <a href="about.html" class="tab-btn">About</a>
+    </nav>
+
+    <!-- Process section: Irkutsk -->
+    <div class="process-section">
+        <p class="process-heading">Process of creating <em>Irkutsk</em>, selected for the Minnesota State Fair Fine Arts Exhibition</p>
+        <div class="process-images" id="process-images"></div>
+    </div>
+
+    <!-- Price notice -->
+    <div class="process-section">
+        <p class="process-heading">Price available upon request</p>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery" id="gallery"></div>
+
+    <!-- Back to top -->
+    <div class="back-to-top" id="back-to-top">
+        <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top"></button>
+        <button class="back-to-top-label" id="back-to-top-label">back to top</button>
+    </div>
+
+    <!-- Social footer -->
+    <footer class="social-footer">
+        <a href="mailto:miraseeba@gmail.com" class="footer-email">miraseeba@gmail.com</a>
+        <div class="social-icons-row">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/mira.seeba/" target="_blank" aria-label="Instagram" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-ig" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-ig" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-ig">
+                        <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#fade-ig)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#dots-ig)" mask="url(#mask-ig)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@mira_seeba/videos" target="_blank" aria-label="YouTube" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-yt" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-yt" cx="15%" cy="0%" r="100%" fx="15%" fy="0%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="white" stop-opacity="0.2"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-yt">
+                        <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#fade-yt)"/>
+                    </mask>
+                </defs>
+                <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#dots-yt)" mask="url(#mask-yt)" stroke="none"/>
+                <rect x="2" y="5" width="20" height="14" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/mira-seeba-025899257/" target="_blank" aria-label="LinkedIn" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-li" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-li" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-li">
+                        <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#fade-li)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#dots-li)" mask="url(#mask-li)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="8" x2="8" y2="8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16v-5M16 16v-3a2 2 0 0 0-4 0" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close"></button>
+        <button class="lightbox-arrow prev" id="prev"></button>
+        <img id="lightbox-img" src="" alt="Illustration fullscreen">
+        <button class="lightbox-arrow next" id="next"></button>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+
+<script>
+    const imageSrcs = [
+        'assets/toWEBP_Painting/HollyWell.webp',
+        'assets/toWEBP_Painting/landscape.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00000.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00004.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00005.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00006.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00007.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00008.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00010.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00011.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00012.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00013.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00014.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00016.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00017.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00018.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00019.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00020.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00021.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00023.webp',
+        'assets/toWEBP_Painting/Underworld.webp',
+    ];
+
+    // Process images: Irkutsk — built FIRST so they are 1, 2, 3 in lightbox
+    const processSrcs = [
+        'assets/toWEBP_Painting/Pre2025_Paintings00003.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00002.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00001.webp',
+    ];
+
+    // Single source of truth for sold paintings
+    const soldPaintings = [
+        'assets/toWEBP_Painting/Pre2025_Paintings00003.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00002.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00001.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00017.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00000.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00004.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00018.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00012.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00006.webp',
+        'assets/toWEBP_Painting/Pre2025_Paintings00023.webp'
+    ];
+
+    // Painting info: title and size for available paintings
+    const paintingInfo = {
+        'assets/toWEBP_Painting/HollyWell.webp': { title: 'Holy Well', size: '20x28"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00008.webp': { title: 'High Gate', size: '13x30"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00016.webp': { title: 'Benched', size: '20x28"' },
+        'assets/toWEBP_Painting/landscape.webp': { title: 'Fooled', size: '12x9"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00010.webp': { title: 'Lila in Snow', size: '16x20"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00011.webp': { title: 'Gates', size: '16x20"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00019.webp': { title: 'Disabled Dog 1', size: '10x8"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00005.webp': { title: 'Pupil', size: '8x10"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00020.webp': { title: 'Disabled Dog 2', size: '8x10"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00013.webp': { title: 'Telephone Booth', size: '20x20"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00014.webp': { title: 'Pretty Sick', size: '6x6"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00007.webp': { title: 'Night Derby', size: '16x20"' },
+        'assets/toWEBP_Painting/Underworld.webp': { title: 'Underworld', size: '12x9"' },
+        'assets/toWEBP_Painting/Pre2025_Paintings00021.webp': { title: 'Hatched', size: '8x10"' }
+    };
+
+    function thumbnailSrc(src) {
+        return src
+            .replace('assets/toWEBP_Painting/', 'assets/thumbs/toWEBP_Painting/')
+            .replace('assets/toWEBP_Illustration/', 'assets/thumbs/toWEBP_Illustration/')
+            .replace(/ /g, '%20');
+    }
+
+    function friendlyName(src) {
+        const index = visualDisplayIndex(src);
+        return 'painting no. ' + (index + 1).toString().padStart(2, '0');
+    }
+
+    // Build gallery
+    const gallery = document.getElementById('gallery');
+    const galleryImages = [];
+    const galleryEntries = [];
+
+    function visualEntries() {
+        return [...galleryEntries].sort((a, b) => {
+            const aRect = a.item.getBoundingClientRect();
+            const bRect = b.item.getBoundingClientRect();
+            const topDiff = aRect.top - bRect.top;
+            if (Math.abs(topDiff) > 12) return topDiff;
+            return aRect.left - bRect.left;
+        });
+    }
+
+    function syncGalleryImagesToVisualOrder() {
+        galleryImages.length = 0;
+        visualEntries().forEach(entry => galleryImages.push(entry.img));
+    }
+
+    function visualDisplayIndex(src) {
+        const index = visualEntries().findIndex(entry => entry.src === src);
+        return index === -1 ? [...processSrcs, ...imageSrcs].indexOf(src) : index;
+    }
+
+    function openLightboxForSrc(src) {
+        syncGalleryImagesToVisualOrder();
+        const index = galleryImages.findIndex(img => img.dataset.fullSrc === src);
+        openLightbox(index === -1 ? 0 : index);
+    }
+
+    const processContainer = document.getElementById('process-images');
+    processSrcs.forEach((src, i) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        const img = document.createElement('img');
+        img.src = thumbnailSrc(src);
+        img.dataset.fullSrc = src;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.alt = 'Irkutsk process ' + (i + 1);
+        const overlay = document.createElement('div');
+        overlay.className = 'item-overlay';
+        
+        if (soldPaintings.includes(src)) {
+            let extraClass = '';
+            if (src.includes('00002')) {
+                extraClass = 'sold-higher';
+            } else if (src.includes('00001')) {
+                extraClass = 'sold-high';
+            }
+            overlay.innerHTML = `
+                <span class="overlay-price ${extraClass}">Sold</span>
+            `;
+        } else if (paintingInfo[src]) {
+            const info = paintingInfo[src];
+            overlay.innerHTML = `
+                <span class="overlay-price">${info.title}</span>
+                <span class="overlay-price">${info.size}</span>
+            `;
+        } else {
+            overlay.innerHTML = '';
+        }
+        
+        item.appendChild(img);
+        item.appendChild(overlay);
+        processContainer.appendChild(item);
+        galleryEntries.push({ item, img, src });
+        galleryImages.push(img);
+        
+        item.addEventListener('click', () => openLightboxForSrc(src));
+    });
+
+    // Main gallery — starts at 4 in lightbox
+    imageSrcs.forEach((src, i) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        
+        const img = document.createElement('img');
+        img.src = thumbnailSrc(src);
+        img.dataset.fullSrc = src;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.alt = 'Painting';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'item-overlay';
+        
+        if (soldPaintings.includes(src)) {
+            overlay.innerHTML = `
+                <span class="overlay-price">Sold</span>
+            `;
+        } else if (paintingInfo[src]) {
+            const info = paintingInfo[src];
+            overlay.innerHTML = `
+                <span class="overlay-price">${info.title}</span>
+                <span class="overlay-price">${info.size}</span>
+            `;
+        } else {
+            overlay.innerHTML = '';
+        }
+
+        item.appendChild(img);
+        item.appendChild(overlay);
+        gallery.appendChild(item);
+        galleryEntries.push({ item, img, src });
+        galleryImages.push(img);
+
+        item.addEventListener('click', () => openLightboxForSrc(src));
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const closeBtn = document.getElementById('lightbox-close');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImages[currentIndex].dataset.fullSrc || galleryImages[currentIndex].src;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex].dataset.fullSrc || galleryImages[currentIndex].src;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+    }
+    function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex].dataset.fullSrc || galleryImages[currentIndex].src;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+    }
+
+    closeBtn.addEventListener('mousedown', () => closeBtn.classList.add('clicked'));
+    closeBtn.addEventListener('mouseup', () => {
+        setTimeout(() => { closeBtn.classList.remove('clicked'); closeLightbox(); }, 80);
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+
+    ['prev', 'next'].forEach(id => {
+        const btn = document.getElementById(id);
+        const action = id === 'prev' ? showPrev : showNext;
+        btn.addEventListener('mousedown', () => btn.classList.add('clicked'));
+        btn.addEventListener('mouseup', () => {
+            setTimeout(() => { btn.classList.remove('clicked'); action(); }, 80);
+        });
+    });
+
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Swipe navigation for lightbox
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const diffX = touchStartX - touchEndX;
+
+        if (Math.abs(diffX) > swipeThreshold) {
+            if (diffX > 0) {
+                // Swipe left - go to next image
+                showNext();
+            } else {
+                // Swipe right - go to previous image
+                showPrev();
+            }
+        }
+    }
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 200);
+});
+    document.getElementById('back-to-top-btn').addEventListener('click', scrollToTop);
+    document.getElementById('back-to-top-label').addEventListener('click', scrollToTop);
+
+    // Sparkle trail
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    let cursorHead;
+
+    if (!isTouchDevice) {
+        cursorHead = document.createElement('div');
+        cursorHead.className = 'cursor-head';
+        document.body.appendChild(cursorHead);
+    }
+
+    document.addEventListener('mousemove', function(e) {
+        // Skip all cursor effects on touch devices
+        if (isTouchDevice) return;
+
+        // Move cursor head (only on desktop)
+        if (cursorHead) {
+            cursorHead.style.left = e.clientX + 'px';
+            cursorHead.style.top = e.clientY + 'px';
+        }
+
+        // Create sparkle
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        const isAltMode = lightbox.classList.contains('open');
+        sparkle.style.backgroundColor = isAltMode ? '#c9607a' : '#1C0218';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
+        document.body.appendChild(sparkle);
+        requestAnimationFrame(() => {
+            sparkle.style.transform = 'translateY(-50px) translate(-50%, -50%) scale(0.3)';
+            sparkle.style.opacity = '0';
+        });
+        setTimeout(() => { sparkle.style.backgroundColor = isAltMode ? '#1C0218' : '#c9607a'; }, 300);
+        setTimeout(() => { sparkle.remove(); }, 1800);
+    });
+</script>
+
+</body>
+</html>

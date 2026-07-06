@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mira Seeba — Rethos</title>
+<!-- Favicon -->
+<link rel="icon" href="assets/favicon/Favicon2026.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://use.typekit.net/smq6qgj.css">
+<style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        cursor: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        background-color: #9e9ebf;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* ── Header ── */
+    header {
+        width: 100%;
+        padding: 24px 20px 0;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        position: static;
+        background-color: #9e9ebf;
+    }
+
+    .header-img {
+        max-width: 900px;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        -webkit-user-drag: none;
+        display: block;
+    }
+
+    /* ── Nav ── */
+    nav {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 20px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #9e9ebf;
+        width: 100%;
+    }
+
+    nav a {
+        font-family: "aesthet-nova", serif;
+        font-weight: 500;
+        font-style: normal;
+        text-decoration: none;
+        color: #1C0218;
+        font-size: 1.9rem;
+        letter-spacing: 0.2em;
+        text-transform: capitalize;
+        padding: 8px 10px;
+        border: none;
+        background: none;
+        transition: transform 0.2s ease, color 0.15s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+    }
+    nav a:hover { transform: scale(1.1); }
+    nav a.active { color: #78414f; }
+
+    /* ── Project Section ── */
+    .project-section {
+        width: 100%;
+        max-width: 900px;
+        padding: 40px 20px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .project-heading {
+        font-family: "aesthet-nova", serif;
+        font-size: 2.5rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-align: center;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+        max-width: 800px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .project-subheading {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.15em;
+        color: #1C0218;
+        text-align: center;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.15);
+        max-width: 600px;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.85;
+    }
+
+
+
+
+    /* ── Gallery Sections (MNHS/Feral style) ── */
+    .gallery {
+        width: min(1300px, 98%);
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+    }
+
+    .gallery-section {
+        display: grid;
+        grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1fr);
+        gap: 24px;
+        align-items: start;
+        padding: 10px 0;
+    }
+
+    .gallery-media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    .gallery-item {
+        position: relative;
+        width: 100%;
+        border-radius: 4px;
+        overflow: visible;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        display: block;
+        border-radius: 4px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+        cursor: none;
+        box-shadow: 0 4px 14px rgba(201, 96, 122, 0.2);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.02);
+        box-shadow: 0 0 8px 2px rgba(201, 96, 122, 0.4);
+        filter: brightness(0.82) drop-shadow(0 0 4px rgba(201, 96, 122, 0.35));
+    }
+
+    .section-label {
+        font-family: "aesthet-nova", serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-align: left;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+        margin: 0 0 14px;
+    }
+
+    .section-info {
+        align-self: center;
+        padding: 20px;
+        max-width: 320px;
+        justify-self: center;
+        background: rgba(28, 2, 24, 0.05);
+        border-radius: 4px;
+        border: 1px solid rgba(28, 2, 24, 0.1);
+    }
+
+    .section-info p {
+        font-family: "aesthet-nova", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        color: #1C0218;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    @media (max-width: 980px) {
+        .gallery-section {
+            grid-template-columns: 1fr;
+        }
+
+        .section-info {
+            max-width: 640px;
+        }
+    }
+
+    /* ── Project Description ── */
+    .project-description {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        color: #1C0218;
+        line-height: 1.7;
+        text-align: center;
+        max-width: 700px;
+        margin: 20px 0;
+        padding: 30px;
+        background: rgba(28, 2, 24, 0.05);
+        border-radius: 8px;
+        border: 1px solid rgba(28, 2, 24, 0.1);
+    }
+
+    /* ── Back to top ── */
+    .back-to-top {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 40px 0 24px;
+        cursor: none;
+
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+
+        pointer-events: none;
+    }
+
+    .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* ── Arrow button ── */
+    .back-to-top-btn {
+        width: 72px;
+        height: 72px;
+        border: none;
+        cursor: none;
+        padding: 0;
+
+        background-color: #1C0218;
+
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpolyline points='10,30 24,18 38,30' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+
+        -webkit-mask-position: center;
+        mask-position: center;
+
+        position: relative;
+    }
+
+    /* DOTS FIXED */
+    .back-to-top-btn::before,
+    .back-to-top-btn::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+
+        width: 60px;
+        height: 60px;
+
+        background-image:
+            radial-gradient(circle, #1C0218 1px, transparent 1px);
+
+        background-size: 6px 6px;
+        opacity: 0.8;
+
+        z-index: -1;
+    }
+
+    /* right dots */
+    .back-to-top-btn::after {
+        right: -28px;
+        top: 8px;
+    }
+
+    /* bottom dots */
+    .back-to-top-btn::before {
+        bottom: -22px;
+        left: 8px;
+    }
+
+    /* Hover */
+    .back-to-top:hover .back-to-top-btn {
+        background-color: #78414f;
+        transform: scale(1.15);
+    }
+
+    /* dots change color */
+    .back-to-top:hover .back-to-top-btn::before,
+    .back-to-top:hover .back-to-top-btn::after {
+        background-image:
+            radial-gradient(circle, #78414f 1px, transparent 1px);
+    }
+
+    /* subtle movement */
+    .back-to-top:hover .back-to-top-btn::after {
+        transform: translateX(6px);
+    }
+    .back-to-top:hover .back-to-top-btn::before {
+        transform: translateY(6px);
+    }
+
+    /* label */
+    .back-to-top-label {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        color: #1C0218;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.25);
+        text-transform: lowercase;
+        border: none;
+        background: none;
+        cursor: none;
+        transition: transform 0.4s ease, color 0.2s ease;
+    }
+    .back-to-top:hover .back-to-top-label {
+        color: #78414f;
+        transform: scale(1.05);
+    }
+
+    /* ── Footer ── */
+    .social-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0 48px;
+        width: 100%;
+    }
+
+    .footer-email {
+        font-family: "aesthet-nova", serif;
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        color: #1C0218;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+        text-shadow: 1px 2px 6px rgba(202, 24, 80, 0.2);
+    }
+    .footer-email:hover {
+        color: #78414f;
+        transform: scale(1.05);
+    }
+
+    .social-icons-row {
+        display: flex;
+        gap: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-link {
+        position: relative;
+        color: #1C0218;
+        display: flex;
+        align-items: center;
+        cursor: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .social-link:hover {
+        color: #78414f;
+        transform: scale(1.15);
+    }
+
+    /* ── Sparkle ── */
+    .sparkle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 1;
+        filter: blur(1px);
+        z-index: 10000;
+        transition: transform 1.8s ease-out, opacity 1.8s ease-out, background-color 0.4s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Cursor head - bright pink dot */
+    .cursor-head {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff69b4;
+        pointer-events: none;
+        z-index: 10001;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #ff69b4, 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        nav { gap: 24px; }
+        nav a { font-size: 1.3rem; }
+    }
+
+    /* Touch device optimization */
+    @media (hover: none) and (pointer: coarse) {
+        body { cursor: auto; }
+        .custom-cursor { display: none; }
+        .cursor-head { display: none; }
+        .gallery-item, .lightbox-arrow, .lightbox-close, .back-to-top-btn, .back-to-top-label, .social-link, .footer-email { cursor: pointer; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="assets/Title_Logo_Site.webp" alt="Mira Seeba" class="header-img">
+</header>
+
+<nav>
+    <a href="index.html">Animation</a>
+    <a href="illustration.html">Illustration</a>
+    <a href="commercial.html" class="active">Commercial</a>
+    <a href="painting.html">Painting</a>
+    <a href="about.html">About</a>
+</nav>
+
+<main class="project-section">
+    <h1 class="project-heading">Rethos</h1>
+    <p class="project-subheading">Freelance Animation and Illustration</p>
+    
+    <div class="project-description">
+        <p>I am currently freelancing with Rethos, a historical preservation non-profit, creating educational graphics and animations for policymakers and deconstruction workers..</p>
+    </div>
+
+    <div class="gallery">
+        <section class="gallery-section">
+            <div>
+                <h2 class="section-label">10 Core Modules </h2>
+                <div class="gallery-media-grid">
+                    <div class="gallery-item">
+                        <img src="assets/rethos/1_10Core.webp" alt="Rethos artwork 1" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/rethos/2_10Core.webp" alt="Rethos artwork 2" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/rethos/3_10Core.webp" alt="Rethos artwork 3" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/rethos/4_10Core.webp" alt="Rethos artwork 4" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/rethos/8_10Core.webp" alt="Rethos artwork 5" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/rethos/9_10Core.webp" alt="Rethos artwork 6" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+            <aside class="section-info">
+                <p>Informational illustrations I made  as part of educational modules designed for deconstruction workers.</p>
+            </aside>
+        </section>
+    </div>
+</main>
+
+<!-- Back to top -->
+<div class="back-to-top" id="back-to-top">
+    <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top"></button>
+    <button class="back-to-top-label" id="back-to-top-label">back to top</button>
+</div>
+
+<!-- Social footer -->
+<footer class="social-footer">
+    <a href="mailto:miraseeba@gmail.com" class="footer-email">miraseeba@gmail.com</a>
+    <div class="social-icons-row">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/mira.seeba/" target="_blank" aria-label="Instagram" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-ig" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-ig" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-ig">
+                        <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#fade-ig)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="5" fill="url(#dots-ig)" mask="url(#mask-ig)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@mira_seeba/videos" target="_blank" aria-label="YouTube" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-yt" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-yt" cx="15%" cy="0%" r="100%" fx="15%" fy="0%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="white" stop-opacity="0.2"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-yt">
+                        <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#fade-yt)"/>
+                    </mask>
+                </defs>
+                <rect x="4" y="9" width="20" height="14" rx="4" fill="url(#dots-yt)" mask="url(#mask-yt)" stroke="none"/>
+                <rect x="2" y="5" width="20" height="14" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/mira-seeba-025899257" target="_blank" aria-label="LinkedIn" class="social-link">
+            <svg width="48" height="48" viewBox="0 0 28 28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <pattern id="dots-li" x="0" y="0" width="2.5" height="2.5" patternUnits="userSpaceOnUse">
+                        <circle cx="0.8" cy="0.8" r="0.4" fill="currentColor" opacity="0.5"/>
+                    </pattern>
+                    <radialGradient id="fade-li" cx="15%" cy="15%" r="85%" fx="15%" fy="15%">
+                        <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="1"/>
+                    </radialGradient>
+                    <mask id="mask-li">
+                        <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#fade-li)"/>
+                    </mask>
+                </defs>
+                <rect x="5" y="5" width="20" height="20" rx="4" fill="url(#dots-li)" mask="url(#mask-li)" stroke="none"/>
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="#9e9ebf" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="8" x2="8" y2="8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16v-5M16 16v-3a2 2 0 0 0-4 0" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+    </div>
+</footer>
+
+<script>
+// Fade in page
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+// Custom cursor
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+    const dx = mouseX - cursorX;
+    const dy = mouseY - cursorY;
+    
+    cursorX += dx * 0.1;
+    cursorY += dy * 0.1;
+    
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Back to top functionality
+const backToTop = document.getElementById('back-to-top');
+const backToTopBtn = document.getElementById('back-to-top-btn');
+const backToTopLabel = document.getElementById('back-to-top-label');
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+backToTopBtn.addEventListener('click', scrollToTop);
+backToTopLabel.addEventListener('click', scrollToTop);
+
+// Show/hide back to top button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Sparkle trail
+const cursorHead = document.createElement('div');
+cursorHead.className = 'cursor-head';
+document.body.appendChild(cursorHead);
+
+document.addEventListener('mousemove', function(e) {
+    // Move cursor head
+    cursorHead.style.left = e.clientX + 'px';
+    cursorHead.style.top = e.clientY + 'px';
+
+    // Create sparkle
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+
+    const isAltMode = !!document.querySelector('.lightbox.open');
+    sparkle.style.backgroundColor = isAltMode ? '#c9607a' : '#1C0218';
+    sparkle.style.left = e.clientX + 'px';
+    sparkle.style.top  = e.clientY + 'px';
+    document.body.appendChild(sparkle);
+
+    requestAnimationFrame(() => {
+        sparkle.style.transform = 'translateY(-50px) translate(-50%, -50%) scale(0.3)';
+        sparkle.style.opacity   = '0';
+    });
+
+    setTimeout(() => {
+        sparkle.style.backgroundColor = isAltMode ? '#1C0218' : '#c9607a';
+    }, 300);
+    setTimeout(() => { sparkle.remove(); }, 1800);
+});
+
+// Click sparkle effect
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    sparkle.style.backgroundColor = `hsl(${Math.random() * 60 + 330}, 70%, 60%)`;
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+        sparkle.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) scale(0)`;
+        sparkle.style.opacity = '0';
+    }, 100);
+    
+    setTimeout(() => sparkle.remove(), 2000);
+}
+
+document.addEventListener('click', (e) => {
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => createSparkle(e.clientX, e.clientY), i * 50);
+    }
+});
+</script>
+
+</body>
+</html>
